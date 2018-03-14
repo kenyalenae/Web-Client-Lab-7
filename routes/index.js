@@ -38,8 +38,8 @@ router.get('/convert', function(req, res, next){
 
 /* GET about page. */
 router.get('/about', function(req, res, next) {
-  res.render('about', { name: "My awesome site"});
-})
+  res.render('about', { name: "Kenya"});
+});
 
 
 module.exports = router;
