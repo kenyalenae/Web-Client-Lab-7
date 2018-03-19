@@ -18,6 +18,9 @@ router.get('/convert', function(req, res, next){
     // figure out how many dollars to convert
     var dollars = query.dollars;
 
+    // figure out the currency to convert from
+    var fromCurrency = query.from_currency;
+
     // figure out the currency to convert to
     var toCurrency = query.to_currency;
 
@@ -33,12 +36,14 @@ router.get('/convert', function(req, res, next){
       toCurrency: toCurrency,
       converted: converted}
     );
-
 });
 
 /* GET about page. */
 router.get('/about', function(req, res, next) {
-  res.render('about', { name: "Kenya"});
+  res.render('about', {
+    name: "Kenya",
+    description: "This is a currency calculator that will convert USD to EUR or JPY"}
+    );
 });
 
 
