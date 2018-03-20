@@ -35,7 +35,7 @@ router.get('/convert', function(req, res, next){
         converted = Math.round(((dollars * exchangeRates[fromCurrency]) / exchangeRates[toCurrency]) * 100) / 100;
     }
     if (fromCurrency == "JPY") {
-        converted = Math.round(((dollars * exchangeRates[fromCurrency]) / exchangeRates[toCurrency]) * 100) / 100;;
+        converted = Math.round(((dollars * exchangeRates[fromCurrency]) / exchangeRates[toCurrency]) * 100) / 100;
     }
 
 
