@@ -25,8 +25,18 @@ router.get('/convert', function(req, res, next){
     var toCurrency = query.to_currency;
 
     // figure out the exchange rate ... do some math!
-    var exchangeRate = exchangeRates[toCurrency];
-    var converted = dollars * exchangeRate;
+    // var exchangeRate = exchangeRates[toCurrency];
+    // var converted = dollars * exchangeRate;
+
+    if (fromCurrency == "USD") {
+        converted = Math.round(((dollars * exchangeRates[fromCurrency]) / exchangeRates[toCurrency]) * 100) / 100;
+    }
+    if (fromCurrency == "EUR") {
+        converted = Math.round(((dollars * exchangeRates[fromCurrency]) / exchangeRates[toCurrency]) * 100) / 100;
+    }
+    if (fromCurrency == "JPY") {
+        converted = Math.round(((dollars * exchangeRates[fromCurrency]) / exchangeRates[toCurrency]) * 100) / 100;;
+    }
 
 
     // TODO replace this with a response page with the conversion data
@@ -34,7 +44,8 @@ router.get('/convert', function(req, res, next){
     res.render('results', {
       dollars: dollars,
       toCurrency: toCurrency,
-      converted: converted}
+      fromCurrency: fromCurrency,
+      converted: converted }
     );
 });
 
