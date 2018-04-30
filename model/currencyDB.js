@@ -8,7 +8,7 @@ function currencyRequest(callback, base, to) {
                                     //has finished, so it's doesn't block any other requests.
                                     //When it's done, it will use the callback to notify the caller that it's done.
 
-        // TODO include your API key in the query parameters
+        // TODO figure out why adding API KEY isnt working
         queryParam = { 'base': base,  'symbols': to };
         var APIKEY = '39117021ab5a9b1932629f3e967cd09c';
         if (type && type.toLowerCase() === 'random') {
